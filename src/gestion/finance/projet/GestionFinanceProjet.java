@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package gestion.finance.projet;
-
+import gestion.finance.modeles.CompteModele;
+import gestion.finance.utils.Database;
 /**
  *
  * @author e1503742
@@ -15,7 +16,9 @@ public class GestionFinanceProjet {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("gestion.finance.projet.GestionFinanceProjet.main()");
+        new Database("localhost", "3307", "gestion_finances", "root", "");
+        CompteModele cm = new CompteModele();
+        cm.createAccount();
     }
     
 }

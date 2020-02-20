@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gestion.finance.classes;
+package gestion.finance.controlleurs;
 
 import gestion.finance.exceptions.AucunePersonneException;
 import java.util.ArrayList;
