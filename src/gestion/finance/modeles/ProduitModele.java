@@ -28,12 +28,12 @@ public class ProduitModele {
 		listeners = new EventListenerList();
 	}
  
-	public int getVolume() {
+	public int getProduit() {
 		return produit;
 	}
  
-	public void setVolume(int volume) {
-		this.produit = volume;
+	public void setProduit(int produit) {
+		this.produit = produit;
  
 		fireProduitChanged();
 	}
@@ -50,7 +50,7 @@ public class ProduitModele {
 		ProduitListener[] listenerList = (ProduitListener[])listeners.getListeners(ProduitListener.class);
  
 		for(ProduitListener listener : listenerList){
-			listener.produitChanged(new ProduitChangedEvent(this, getVolume()));
+			listener.produitChanged(new ProduitChangedEvent(this, getProduit()));
 		}
 	}
 }
