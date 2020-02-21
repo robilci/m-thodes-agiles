@@ -4,8 +4,13 @@
  * and open the template in the editor.
  */
 package gestion.finance.projet;
+import gestion.finance.controleurs.TransactionControleur;
 import gestion.finance.modeles.CompteModele;
+import gestion.finance.modeles.TransactionModele;
 import gestion.finance.utils.Database;
+import gestion.finance.vue.Accueil;
+import java.awt.Dimension;
+import javax.swing.JFrame;
 /**
  *
  * @author e1503742
@@ -16,9 +21,9 @@ public class GestionFinanceProjet {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new Database("localhost", "3307", "gestion_finances", "root", "");
-        CompteModele cm = new CompteModele();
-        cm.createAccount();
+        new Database("localhost", "3306", "gestion_finances", "root", "");
+        TransactionModele modele = new TransactionModele();
+        TransactionControleur ts = new TransactionControleur(modele);
     }
     
 }
