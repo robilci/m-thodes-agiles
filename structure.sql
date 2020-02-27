@@ -35,13 +35,6 @@ CREATE TABLE IF NOT EXISTS `categorie` (
   PRIMARY KEY (`ID_Categorie`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Déchargement des données de la table `categorie`
---
-
-INSERT INTO `categorie` (`ID_Categorie`, `Nom`) VALUES
-('1', 'testhamza'),
-('2', 'aussiMOI');
 
 -- --------------------------------------------------------
 
@@ -54,6 +47,7 @@ CREATE TABLE IF NOT EXISTS `compte` (
   `ID_Compte` INT NOT NULL AUTO_INCREMENT,
   `Pseudo` varchar(50) NOT NULL,
   `Password` varchar(50) NOT NULL,
+  CONSTRAINT compte_unique UNIQUE (Pseudo, Password),
   PRIMARY KEY (`ID_Compte`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -101,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `transactions` (
   `Montant` decimal(15,2) DEFAULT NULL,
   `Libelle` varchar(50) DEFAULT NULL,
   `ID_Personne` int(11) DEFAULT NULL,
-  'ID_Categorie' int(11) DEFAULT NULL,
+  `ID_Categorie` int(11) DEFAULT NULL,
   PRIMARY KEY (`ID_Transaction`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 COMMIT;
