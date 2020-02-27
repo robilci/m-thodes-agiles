@@ -11,8 +11,8 @@ import java.util.EventListener;
  *
  * @author robin
  */
-public interface CompteListener extends EventListener{
-     public void compteChanged(CompteChangedEvent event);
-     
-     public void compteAuth(boolean result);
+public interface PersonneListener extends EventListener{
+    
+    public void PersonneChanged(boolean result);
+    
 }

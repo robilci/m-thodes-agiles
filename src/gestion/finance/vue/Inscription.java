@@ -248,9 +248,14 @@ public class Inscription extends View implements CompteListener{
             JOptionPane.showMessageDialog(jPanel1, message, "Impossible de créer le compte", JOptionPane.ERROR_MESSAGE);
         } else {
             message = "Compte créer avec succès !";
-            JOptionPane.showMessageDialog(jPanel1, message, "Impossible de créer le compte", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(jPanel1, message, "Création du compte", JOptionPane.INFORMATION_MESSAGE);
             dispose();
         }
+    }
+
+    @Override
+    public void compteAuth(boolean result) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
                 
     // Variables declaration - do not modify//GEN-BEGIN:variables

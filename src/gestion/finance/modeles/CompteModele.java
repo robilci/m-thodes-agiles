@@ -59,6 +59,18 @@ public class CompteModele {
         fireTransactionChanged();
     }
     
+    public void auth(String pseudo, String password){
+        PreparedStatement ps;
+        try {
+            ps = Database.getConnection().prepareStatement("SELECT Pseudo FROM compte WHERE Pseudo = '" + pseudo + "' AND Password = '" + password + "'");
+            int retour = ps.executeUpdate();
+            System.out.println(retour + " RETOURRR");
+        } catch (SQLException ex) {
+            result = false;
+            Logger.getLogger(CompteModele.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     
     
 }

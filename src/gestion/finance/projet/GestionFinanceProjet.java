@@ -5,11 +5,13 @@
  */
 package gestion.finance.projet;
 import gestion.finance.controleurs.CompteControleur;
+import gestion.finance.controleurs.PersonneControleur;
 import gestion.finance.controleurs.TransactionControleur;
 import gestion.finance.modeles.CompteModele;
 import gestion.finance.modeles.TransactionModele;
 import gestion.finance.utils.Database;
 import gestion.finance.vue.Accueil;
+import gestion.finance.vue.AjoutMembre;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 /**
@@ -26,8 +28,11 @@ public class GestionFinanceProjet {
         /*TransactionModele modele = new TransactionModele();
         TransactionControleur ts = new TransactionControleur(modele);*/
         
-        CompteControleur compteControleur = new CompteControleur();
-        compteControleur.showInscription();
+        /*CompteControleur compteControleur = new CompteControleur();
+        compteControleur.showInscription();*/
+        
+        PersonneControleur controleur = new PersonneControleur();
+        controleur.showAjoutMembre();
     }
     
     
