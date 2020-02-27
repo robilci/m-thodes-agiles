@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import gestion.finance.utils.Database;
+import javax.swing.event.EventListenerList;
 
 /**
  *
@@ -19,22 +20,43 @@ import gestion.finance.utils.Database;
  */
 public class CompteModele {
     
-
+    private EventListenerList listeners;
+    private boolean result;
     
     public CompteModele(){
-
+        listeners = new EventListenerList();
+        result = false;
     }
     
-    public void createAccount(){
+    public void addTransactionListener(CompteListener listener) {
+        listeners.add(CompteListener.class, listener);
+    }
+
+    public void removeTransactionListener(CategorieListener l) {
+        listeners.remove(CategorieListener.class, l);
+    }
+
+    public void fireTransactionChanged() {
+        CompteListener[] listenerList = (CompteListener[]) listeners.getListeners(CompteListener.class);
+        for (CompteListener listener : listenerList) {
+            listener.compteChanged(new CompteChangedEvent(this, this.result));
+        }
+    }
+    
+    public void createAccount(String pseudo, String password){
         PreparedStatement ps;
         try {
             ps = Database.getConnection().prepareStatement("INSERT INTO compte (Pseudo, Password) VALUES (?, ?)");
-            ps.setString(1, "Robin");
-            ps.setString(2, "45587888888");
+            ps.setString(1, pseudo);
+            ps.setString(2, password);
             int retour = ps.executeUpdate();
+            result = true;
         } catch (SQLException ex) {
+            result = false;
             Logger.getLogger(CompteModele.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        fireTransactionChanged();
     }
     
     

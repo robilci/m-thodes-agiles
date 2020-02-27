@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package gestion.finance.projet;
+import gestion.finance.controleurs.CompteControleur;
 import gestion.finance.controleurs.TransactionControleur;
 import gestion.finance.modeles.CompteModele;
 import gestion.finance.modeles.TransactionModele;
@@ -22,8 +23,12 @@ public class GestionFinanceProjet {
      */
     public static void main(String[] args) {
         new Database("localhost", "3306", "gestion_finances", "root", "");
-        TransactionModele modele = new TransactionModele();
-        TransactionControleur ts = new TransactionControleur(modele);
+        /*TransactionModele modele = new TransactionModele();
+        TransactionControleur ts = new TransactionControleur(modele);*/
+        
+        CompteControleur compteControleur = new CompteControleur();
+        compteControleur.showInscription();
     }
+    
     
 }

@@ -24,6 +24,7 @@ public class TransactionControleur {
         this.model = model;
         accueilView = new Accueil(this.model, this);
         this.model.addTransactionListener(accueilView);
+        this.showAccueil();
     }
     
     public void notifyMembreChanged(String id){
@@ -32,6 +33,14 @@ public class TransactionControleur {
     
     public void notifyDatesChanged(String dateDebut, String dateFin){
         model.setDates(dateDebut, dateFin);
+    }
+    
+    public void showAccueil(){
+        this.accueilView.setVisible(true);
+    }
+    
+    public void closeAccueil(){
+        this.accueilView.setVisible(false);
     }
    
 }

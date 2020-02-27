@@ -21,7 +21,7 @@ import javax.swing.DefaultComboBoxModel;
  *
  * @author lauri
  */
-public class Accueil extends javax.swing.JFrame implements TransactionListener {
+public class Accueil extends View implements TransactionListener {
     
     private TransactionModele modele;
     private TransactionControleur controleur;
@@ -37,7 +37,6 @@ public class Accueil extends javax.swing.JFrame implements TransactionListener {
         initActionListener();
         setPreferredSize(new Dimension(250, 150));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
     }
 
     /**
