@@ -25,7 +25,7 @@ public class SoldeModele {
     private int soldeID;
     private String dateSolde;
     private double soldeActuel = 0;
-    private boolean result;
+
 
     public SoldeModele(EventListenerList listeners, int soldeID, String dateSolde) {
         this.listeners = listeners;
@@ -35,12 +35,12 @@ public class SoldeModele {
     }
 
 
-    public void addSoldeListener(CompteListener listener) {
-        listeners.add(CompteListener.class, listener);
+    public void addSoldeListener(SoldeListener listener) {
+        listeners.add(SoldeListener.class, listener);
     }
 
-    public void removeSoldeListener(CategorieListener l) {
-        listeners.remove(CategorieListener.class, l);
+    public void removeSoldeListener(SoldeListener l) {
+        listeners.remove(SoldeListener.class, l);
     }
 
     public double getSoldeActuel() {
@@ -50,10 +50,11 @@ public class SoldeModele {
             ps = Database.getConnection().prepareStatement("SELECT * FROM solde ORDER BY ID_Solde DESC LIMIT 1");
             ResultSet retour = ps.executeQuery();
             if (!retour.next()) {
-
                 return soldeActuel;
             } else {
+                this.soldeID = retour.getInt("ID_Solde");
                 this.soldeActuel = retour.getDouble("SoldeActuel");
+                this.dateSolde = retour.getString("DateSolde");
                 fireSoldeChanged();
                 return soldeActuel;
                 
