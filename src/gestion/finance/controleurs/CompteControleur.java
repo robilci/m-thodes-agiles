@@ -7,6 +7,7 @@ package gestion.finance.controleurs;
 
 import gestion.finance.modeles.CompteModele;
 import gestion.finance.modeles.TransactionListener;
+import gestion.finance.vue.Connexion;
 import gestion.finance.vue.Inscription;
 
 /**
@@ -16,13 +17,16 @@ import gestion.finance.vue.Inscription;
 public class CompteControleur {
     
     private Inscription inscriptionView;
+    private Connexion connexionView;
     
     private CompteModele compteModele;
     
     public CompteControleur(){
         this.compteModele = new CompteModele();
-        this.inscriptionView = new Inscription(this, this.compteModele);
-        compteModele.addTransactionListener(this.inscriptionView);
+        this.inscriptionView = new Inscription(this);
+        this.connexionView = new Connexion(this);
+        compteModele.addCompteListener(this.inscriptionView);
+        compteModele.addCompteListener(this.connexionView);
     }
     
     public void showInscription(){
@@ -33,8 +37,20 @@ public class CompteControleur {
         this.inscriptionView.setVisible(false);
     }
     
-    public void notifyConfirmed(String pseudo, String password){
+    public void showConnexion(){
+        this.connexionView.setVisible(true);
+    }
+    
+    public void closeConnexion(){
+        this.connexionView.setVisible(false);
+    }
+    
+    public void createAccount(String pseudo, String password){
         compteModele.createAccount(pseudo, password);
+    }
+    
+    public void auth(String pseudo, String password){
+        compteModele.auth(pseudo, password);
     }
     
 }

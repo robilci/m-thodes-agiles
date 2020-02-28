@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import gestion.finance.utils.Database;
+import java.sql.ResultSet;
 import javax.swing.event.EventListenerList;
 
 /**
@@ -28,18 +29,25 @@ public class CompteModele {
         result = false;
     }
     
-    public void addTransactionListener(CompteListener listener) {
+    public void addCompteListener(CompteListener listener) {
         listeners.add(CompteListener.class, listener);
     }
 
-    public void removeTransactionListener(CategorieListener l) {
+    public void removeCompteListener(CategorieListener l) {
         listeners.remove(CategorieListener.class, l);
     }
 
-    public void fireTransactionChanged() {
+    public void fireCompteChanged() {
         CompteListener[] listenerList = (CompteListener[]) listeners.getListeners(CompteListener.class);
         for (CompteListener listener : listenerList) {
             listener.compteChanged(new CompteChangedEvent(this, this.result));
+        }
+    }
+    
+    public void fireAuthenticationTried(boolean result) {
+        CompteListener[] listenerList = (CompteListener[]) listeners.getListeners(CompteListener.class);
+        for (CompteListener listener : listenerList) {
+            listener.compteAuth(result);
         }
     }
     
@@ -56,19 +64,26 @@ public class CompteModele {
             Logger.getLogger(CompteModele.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        fireTransactionChanged();
+        fireCompteChanged();
     }
     
     public void auth(String pseudo, String password){
         PreparedStatement ps;
+        boolean resultAuth = false;
         try {
-            ps = Database.getConnection().prepareStatement("SELECT Pseudo FROM compte WHERE Pseudo = '" + pseudo + "' AND Password = '" + password + "'");
-            int retour = ps.executeUpdate();
-            System.out.println(retour + " RETOURRR");
+            ps = Database.getConnection().prepareStatement("SELECT * FROM compte WHERE Pseudo = '" + pseudo + "' AND Password = '" + password + "'");
+            ResultSet retour = ps.executeQuery();
+            if(!retour.next())
+                resultAuth = false;
+            else 
+                resultAuth = true;
+            
         } catch (SQLException ex) {
-            result = false;
+            resultAuth = false;
             Logger.getLogger(CompteModele.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        fireAuthenticationTried(resultAuth);
     }
     
     

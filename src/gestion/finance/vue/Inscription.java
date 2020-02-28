@@ -20,14 +20,12 @@ import javax.swing.JOptionPane;
 
 public class Inscription extends View implements CompteListener{
     
-    private CompteModele modele;
     private CompteControleur controleur;
 
     /**
      * Creates new form Inscription
      */
-    public Inscription(CompteControleur controleur, CompteModele modele) {
-        this.modele = modele;
+    public Inscription(CompteControleur controleur) {
         this.controleur = controleur;
         initComponents();
         initActionListener();
@@ -212,7 +210,7 @@ public class Inscription extends View implements CompteListener{
                 else if(pseudo.equals(""))
                     erreurMessage = "Le pseudo ne eut pas être vide !";
                 else
-                    controleur.notifyConfirmed(pseudo, password2);
+                    controleur.createAccount(pseudo, password2);
                 
                 if(!erreurMessage.equals("")){
                     JOptionPane.showMessageDialog(jPanel1, erreurMessage, "Impossible de créer le compte", JOptionPane.ERROR_MESSAGE);
@@ -254,9 +252,7 @@ public class Inscription extends View implements CompteListener{
     }
 
     @Override
-    public void compteAuth(boolean result) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void compteAuth(boolean result) {}
                 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables

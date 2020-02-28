@@ -28,11 +28,14 @@ public class GestionFinanceProjet {
         /*TransactionModele modele = new TransactionModele();
         TransactionControleur ts = new TransactionControleur(modele);*/
         
-        /*CompteControleur compteControleur = new CompteControleur();
-        compteControleur.showInscription();*/
+        CompteControleur compteControleur = new CompteControleur();
+        //compteControleur.showInscription();
+        compteControleur.showConnexion();
         
-        PersonneControleur controleur = new PersonneControleur();
-        controleur.showAjoutMembre();
+        /*PersonneControleur controleur = new PersonneControleur();
+        controleur.showAjoutMembre();*/
+        
+        
     }
     
     

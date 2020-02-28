@@ -20,14 +20,12 @@ import javax.swing.JOptionPane;
  */
 public class AjoutMembre extends View implements PersonneListener{
     
-    PersonneModele modele;
     PersonneControleur controleur;
 
          /**
      * Creates new form AjoutMembre
      */
-    public AjoutMembre(PersonneControleur controleur, PersonneModele modele) {
-        this.modele = modele;
+    public AjoutMembre(PersonneControleur controleur) {
         this.controleur = controleur;
         initComponents();
         initActionListener();
