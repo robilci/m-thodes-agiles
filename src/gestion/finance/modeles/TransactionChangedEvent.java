@@ -5,20 +5,20 @@
  */
 package gestion.finance.modeles;
 import java.util.EventObject;
+import javax.swing.DefaultListModel;
 /**
  *
  * @author victo
  */
 public class TransactionChangedEvent extends EventObject{
-     private int nouvelleTransaction;
+     private DefaultListModel<String> nouveauModele;
  
-	public TransactionChangedEvent(Object source, int nouvelleTransaction){
+	public TransactionChangedEvent(Object source, DefaultListModel<String> modele){
 		super(source);
- 
-		this.nouvelleTransaction = nouvelleTransaction;
+                this.nouveauModele = modele;
 	}
  
-	public int getNouvelleCategoriet(){
-		return nouvelleTransaction;
+	public DefaultListModel<String> getNouveauModele(){
+		return nouveauModele;
 	}
 }

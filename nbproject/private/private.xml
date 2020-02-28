@@ -3,10 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/victo/Documents/GitHub/m-thodes-agiles/src/gestion/finance/controlleurs/TransactionControlleur.java</file>
-            <file>file:/C:/Users/victo/Documents/GitHub/m-thodes-agiles/src/gestion/finance/projet/GestionFinanceProjet.java</file>
-            <file>file:/C:/Users/victo/Documents/GitHub/m-thodes-agiles/src/gestion/finance/modeles/CategorieModele.java</file>
-            <file>file:/C:/Users/victo/Documents/GitHub/m-thodes-agiles/src/gestion/finance/modeles/TransactionModele.java</file>
+            <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/modeles/CompteModele.java</file>
+            <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/controleurs/TransactionControleur.java</file>
+            <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/modeles/TransactionModele.java</file>
+            <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/vue/Connexion.java</file>
+            <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/controleurs/CompteControleur.java</file>
+            <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/projet/GestionFinanceProjet.java</file>
+            <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/utils/Session.java</file>
+            <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/vue/Accueil.java</file>
         </group>
     </open-files>
 </project-private>
