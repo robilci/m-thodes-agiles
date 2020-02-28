@@ -3,17 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gestion.finance.controlleurs;
+package gestion.finance.modeles;
 
-
+import java.util.EventListener;
 
 /**
  *
- * @author e1503742
+ * @author robin
  */
-public class TransactionControlleur {
+public interface PersonneListener extends EventListener{
     
-    
-    
+    public void PersonneChanged(boolean result);
     
 }
