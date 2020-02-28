@@ -4,21 +4,23 @@
  * and open the template in the editor.
  */
 package gestion.finance.modeles;
+
 import java.util.EventObject;
+
 /**
  *
  * @author victo
  */
-public class ProduitChangedEvent extends EventObject{
-    private int nouveauProduit;
+public class SoldeChangedEvent extends EventObject{
+      private double nouveauSolde;
  
-	public ProduitChangedEvent(Object source, int nouveauProduit){
+	public SoldeChangedEvent(Object source, double nouveauSolde){
 		super(source);
  
-		this.nouveauProduit = nouveauProduit;
+		this.nouveauSolde = nouveauSolde;
 	}
  
-	public int getNouveauProduit(){
-		return nouveauProduit;
+	public double getNouveauSolde(){
+		return nouveauSolde;
 	}
 }

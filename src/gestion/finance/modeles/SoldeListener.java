@@ -9,6 +9,6 @@ import java.util.EventListener;
  *
  * @author victo
  */
-public interface ProduitListener extends EventListener{
-    public void produitChanged(ProduitChangedEvent event);
+public interface SoldeListener extends EventListener{
+    public void soldeChanged(SoldeChangedEvent event);
 }
