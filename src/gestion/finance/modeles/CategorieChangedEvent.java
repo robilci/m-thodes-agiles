@@ -12,15 +12,15 @@ import java.util.EventObject;
  * @author victo
  */
 public class CategorieChangedEvent extends EventObject{
-      private int nouvelleCategorie;
+      private CategorieModele nouvelleCategorie;
  
-	public CategorieChangedEvent(Object source, int nouvelleCategorie){
+	public CategorieChangedEvent(Object source, CategorieModele nouvelleCategorie){
 		super(source);
  
 		this.nouvelleCategorie = nouvelleCategorie;
 	}
  
-	public int getNouvelleCategoriet(){
+	public CategorieModele getNouvelleCategoriet(){
 		return nouvelleCategorie;
 	}
 }
