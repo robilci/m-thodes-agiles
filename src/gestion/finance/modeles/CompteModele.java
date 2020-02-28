@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import gestion.finance.utils.Database;
+import gestion.finance.utils.Session;
 import java.sql.ResultSet;
 import javax.swing.event.EventListenerList;
 
@@ -75,8 +76,10 @@ public class CompteModele {
             ResultSet retour = ps.executeQuery();
             if(!retour.next())
                 resultAuth = false;
-            else 
+            else {
                 resultAuth = true;
+                new Session(retour.getString("Pseudo"), retour.getString("ID_Compte"));
+            }
             
         } catch (SQLException ex) {
             resultAuth = false;

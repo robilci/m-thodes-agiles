@@ -6,6 +6,7 @@
 package gestion.finance.modeles;
 
 import gestion.finance.utils.Database;
+import gestion.finance.utils.Session;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -82,7 +83,7 @@ public class TransactionModele {
     public String[] getMembres(int compte) {
         String[] listMembre = null;
         try {
-            PreparedStatement statement = Database.getConnection().prepareStatement("SELECT * FROM personne WHERE ID_Compte = " + compte);
+            PreparedStatement statement = Database.getConnection().prepareStatement("SELECT * FROM personne WHERE ID_Compte = " + Session.getIdCompte());
             ResultSet rs = statement.executeQuery();
             rs.last();
             listMembre = new String[rs.getRow() + 1];

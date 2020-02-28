@@ -6,8 +6,10 @@
 package gestion.finance.vue;
 
 import gestion.finance.controleurs.CompteControleur;
+import gestion.finance.controleurs.TransactionControleur;
 import gestion.finance.modeles.CompteChangedEvent;
 import gestion.finance.modeles.CompteListener;
+import gestion.finance.modeles.TransactionModele;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -167,7 +169,11 @@ public class Connexion extends View implements CompteListener{
     @Override
     public void compteAuth(boolean result) {
         if(result){
-            System.out.println("connexion ... session ...");
+            JOptionPane.showMessageDialog(jPanel1, "Connexion réussi !", "Connexion réussi", JOptionPane.INFORMATION_MESSAGE);
+            TransactionModele transactionModele = new TransactionModele();
+            TransactionControleur transactionControleur = new TransactionControleur(transactionModele);
+            transactionControleur.showAccueil();
+            dispose();
         } else {
             JOptionPane.showMessageDialog(jPanel1, "Pseudo ou mot de passe incorrect", "Impossible de se connecter", JOptionPane.ERROR_MESSAGE);
         }

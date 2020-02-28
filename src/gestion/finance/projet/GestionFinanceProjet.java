@@ -25,17 +25,9 @@ public class GestionFinanceProjet {
      */
     public static void main(String[] args) {
         new Database("localhost", "3306", "gestion_finances", "root", "");
-        /*TransactionModele modele = new TransactionModele();
-        TransactionControleur ts = new TransactionControleur(modele);*/
         
         CompteControleur compteControleur = new CompteControleur();
-        //compteControleur.showInscription();
-        compteControleur.showConnexion();
-        
-        /*PersonneControleur controleur = new PersonneControleur();
-        controleur.showAjoutMembre();*/
-        
-        
+        compteControleur.showConnexion();  
     }
     
     

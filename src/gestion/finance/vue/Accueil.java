@@ -5,6 +5,8 @@
  */
 package gestion.finance.vue;
 
+import gestion.finance.controleurs.CompteControleur;
+import gestion.finance.controleurs.PersonneControleur;
 import gestion.finance.controleurs.TransactionControleur;
 import gestion.finance.modeles.TransactionChangedEvent;
 import java.awt.Dimension;
@@ -13,6 +15,7 @@ import java.util.Observer;
 import javax.swing.JFrame;
 import gestion.finance.modeles.TransactionListener;
 import gestion.finance.modeles.TransactionModele;
+import gestion.finance.utils.Session;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
@@ -49,9 +52,11 @@ public class Accueil extends View implements TransactionListener {
         jSeparator1 = new javax.swing.JSeparator();
         bImport = new javax.swing.JButton();
         bAnalyse = new javax.swing.JButton();
+        bDeconnexion = new javax.swing.JButton();
         bAjoutMembre = new javax.swing.JButton();
         bGraphique = new javax.swing.JButton();
         bPrediction = new javax.swing.JButton();
+        bAjouterCompte = new javax.swing.JButton();
         listMembre = new javax.swing.JComboBox<>();
         labelDebut = new javax.swing.JLabel();
         dateDebut = new javax.swing.JTextField();
@@ -78,7 +83,11 @@ public class Accueil extends View implements TransactionListener {
             }
         });
         
+        bAjouterCompte.setText("Ajouter un compte");
+        
         bAnalyse.setText("Analyse des données sélecionner");
+        
+        bDeconnexion.setText("Déconnexion");
         
         bAjoutMembre.setText("Ajouter membre à la famille");
         
@@ -128,7 +137,10 @@ public class Accueil extends View implements TransactionListener {
                                         .addComponent(bAnalyse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(bAjoutMembre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(bGraphique, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
-                                        .addComponent(bPrediction, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(bAjouterCompte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE) 
+                                        .addComponent(bPrediction, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(bDeconnexion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                           
                                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -144,6 +156,10 @@ public class Accueil extends View implements TransactionListener {
                                                 .addComponent(bAjoutMembre)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(bGraphique)
+                                                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(bAjouterCompte)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(bDeconnexion)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(bPrediction)
                                                 .addGap(0, 275, Short.MAX_VALUE))
@@ -197,10 +213,32 @@ public class Accueil extends View implements TransactionListener {
             }
         });
         
+        bAjoutMembre.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                PersonneControleur personneControleur = new PersonneControleur();
+                personneControleur.showAjoutMembre();
+            }
+        });
         
+        bAjouterCompte.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CompteControleur compteControleur = new CompteControleur();
+                compteControleur.showInscription();
+            }
+        });
         
-        
-        
+        bDeconnexion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Session.destroy();
+                CompteControleur compteControleur = new CompteControleur();
+                compteControleur.showConnexion();
+                dispose();
+            }
+        });
+  
     }
     
     private void bImportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bImportActionPerformed
@@ -212,9 +250,11 @@ public class Accueil extends View implements TransactionListener {
     private javax.swing.JButton bAnalyse;
     private javax.swing.JButton bAppliquer;
     private javax.swing.JButton bEnlever;
+    private javax.swing.JButton bDeconnexion;
     private javax.swing.JButton bGraphique;
     private javax.swing.JButton bImport;
     private javax.swing.JButton bPrediction;
+    private javax.swing.JButton bAjouterCompte;
     private javax.swing.JTextField dateDebut;
     private javax.swing.JTextField dateFin;
     private javax.swing.JScrollPane jScrollPane1;
