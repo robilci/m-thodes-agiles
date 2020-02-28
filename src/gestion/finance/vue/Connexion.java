@@ -58,7 +58,8 @@ public class Connexion extends View implements CompteListener{
 
         jLabel11.setText("Mot de passe:");
 
-        passwordTextField.setText("jPasswordField1");
+        pseudoTextField.setText("admin");
+        passwordTextField.setText("1234");
 
         connexionButton.setText("Se connecter");
         connexionButton.addActionListener(new java.awt.event.ActionListener() {

@@ -20,7 +20,7 @@ public class PersonneControleur {
     public PersonneControleur(){
         this.modele = new PersonneModele();
         this.ajoutMembreView = new AjoutMembre(this);
-        this.modele.addTransactionListener(ajoutMembreView);
+        this.modele.addPersonneListener(ajoutMembreView);
         this.showAjoutMembre();
     }
     

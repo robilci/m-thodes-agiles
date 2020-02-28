@@ -80,10 +80,11 @@ public class TransactionModele {
 
     }
 
-    public String[] getMembres(int compte) {
+    public String[] getMembres() {
         String[] listMembre = null;
         try {
             PreparedStatement statement = Database.getConnection().prepareStatement("SELECT * FROM personne WHERE ID_Compte = " + Session.getIdCompte());
+            System.out.println("SELECT * FROM personne WHERE ID_Compte = " + Session.getIdCompte());
             ResultSet rs = statement.executeQuery();
             rs.last();
             listMembre = new String[rs.getRow() + 1];

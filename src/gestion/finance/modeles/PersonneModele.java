@@ -26,15 +26,15 @@ public class PersonneModele {
         this.listeners = new EventListenerList();
     } 
     
-    public void addTransactionListener(PersonneListener listener) {
+    public void addPersonneListener(PersonneListener listener) {
         listeners.add(PersonneListener.class, listener);
     }
     
-     public void removeTransactionListener(CategorieListener l) {
+     public void removePersonneListener(CategorieListener l) {
         listeners.remove(CategorieListener.class, l);
     }
      
-    public void fireTransactionChanged() {
+    public void firePersonneChanged() {
         PersonneListener[] listenerList = (PersonneListener[]) listeners.getListeners(PersonneListener.class);
         for (PersonneListener listener : listenerList) {
             listener.PersonneChanged(this.result);
@@ -55,6 +55,6 @@ public class PersonneModele {
             Logger.getLogger(CompteModele.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        fireTransactionChanged();
+        firePersonneChanged();
     }
 }

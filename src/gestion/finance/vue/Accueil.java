@@ -69,7 +69,7 @@ public class Accueil extends View implements TransactionListener {
         listTransaction = new javax.swing.JList<>();
         
         listTransaction.setModel(modele.updateModel());
-        listMembre.setModel(new DefaultComboBoxModel(modele.getMembres(1)));
+        listMembre.setModel(new DefaultComboBoxModel(modele.getMembres()));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Accueil");
@@ -105,7 +105,7 @@ public class Accueil extends View implements TransactionListener {
         
         bAppliquer.setText("Appliquer filtre de date");
         
-        bEnlever.setText("Enlever filtre de date");
+        bEnlever.setText("Enlever tous les filtres");
         
         jScrollPane1.setViewportView(listTransaction);
         
@@ -159,9 +159,10 @@ public class Accueil extends View implements TransactionListener {
                                                   .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(bAjouterCompte)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(bDeconnexion)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(bPrediction)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(bDeconnexion)
                                                 .addGap(0, 275, Short.MAX_VALUE))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addContainerGap()

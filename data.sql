@@ -7,7 +7,7 @@ INSERT INTO `categorie` (`ID_Categorie`, `Nom`) VALUES
 ('5', 'Autre');
 
 DELETE FROM compte;
-INSERT INTO compte VALUES ("1", "admin", "1234");
+INSERT INTO compte VALUES ("1", "admin", "81dc9bdb52d04dc20036dbd8313ed055");
 
 DELETE FROM personne;
 INSERT INTO personne VALUES("1", "JAKUBCZAK", "Robin", "1995-09-28", "1");
