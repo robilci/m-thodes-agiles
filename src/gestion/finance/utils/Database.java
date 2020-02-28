@@ -18,7 +18,14 @@ import java.util.logging.Logger;
 public class Database {
     
     private static Connection connexion = null;
-    private static String host, port, db_name, user, password;
+
+
+    private static String host = "localhost";
+    private static String port = "3307";
+    private static String db_name = "gestion_finances";
+    private static String user = "root";
+    private static String password = "";
+
 
     public Database(String host, String port, String db_name, String user, String password) {
         this.host = host;
