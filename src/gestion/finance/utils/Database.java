@@ -20,7 +20,7 @@ public class Database {
     private static Connection connexion = null;
 
     private static String host = "localhost";
-    private static String port = "3306";
+    private static String port = "3307";
     private static String db_name = "gestion_finances";
     private static String user = "root";
     private static String password = "";

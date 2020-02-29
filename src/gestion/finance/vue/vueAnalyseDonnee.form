@@ -46,7 +46,7 @@
                               <EmptySpace min="75" pref="75" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jTextField3" pref="166" max="32767" attributes="0"/>
-                                  <Component id="jTextField1" max="32767" attributes="0"/>
+                                  <Component id="moyenneMensuelle" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -67,7 +67,7 @@
               <Component id="jLabel_analyse" min="-2" pref="26" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="moyenneMensuelle" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel_moyenne" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
@@ -76,9 +76,9 @@
                   <Component id="jTextField2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel3_Prediction" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jTextField3" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel3_Prediction" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Component id="jButtonFermer" min="-2" max="-2" attributes="0"/>
@@ -103,13 +103,13 @@
         <Property name="text" type="java.lang.String" value="pr&#xe9;diction d&#xe9;pense mois prochain"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="X"/>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="moyenneMensuelle">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="moyenneMensuelleActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="TransactionModele transactModel = new TransactionModele();&#xa;moyenneMensuelle.setText(&quot;test&quot;);&#xa;try{&#xa;moyenneMensuelle.setText(transactModel.getAvg());&#xa;System.out.println(transactModel.getAvg());&#xa;moyenneMensuelle.setEnabled(false);&#xa;}&#xa;catch(SQLException ex){&#xa;    Logger.getLogger(vueAnalyseDonnee.class.getName()).log(Level.SEVERE, null, ex);&#xa;}"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField2">
       <Properties>

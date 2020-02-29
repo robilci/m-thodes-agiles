@@ -3,8 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gestion.finance.projet;
+package gestion.finance.vue;
 
+import gestion.finance.controleurs.TransactionControleur;
+import gestion.finance.modeles.TransactionModele;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 /**
@@ -32,7 +37,7 @@ public class vueAnalyseDonnee extends javax.swing.JFrame {
         jLabel_moyenne = new javax.swing.JLabel();
         jLabel_correlation = new javax.swing.JLabel();
         jLabel3_Prediction = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        moyenneMensuelle = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jLabel_analyse = new javax.swing.JLabel();
@@ -46,10 +51,19 @@ public class vueAnalyseDonnee extends javax.swing.JFrame {
 
         jLabel3_Prediction.setText("prédiction dépense mois prochain");
 
-        jTextField1.setText("X");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        TransactionModele transactModel = new TransactionModele();
+        moyenneMensuelle.setText("test");
+        try{
+            moyenneMensuelle.setText(transactModel.getAvg());
+            System.out.println(transactModel.getAvg());
+            moyenneMensuelle.setEnabled(false);
+        }
+        catch(SQLException ex){
+            Logger.getLogger(vueAnalyseDonnee.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        moyenneMensuelle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                moyenneMensuelleActionPerformed(evt);
             }
         });
 
@@ -95,7 +109,7 @@ public class vueAnalyseDonnee extends javax.swing.JFrame {
                                 .addGap(75, 75, 75)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                                    .addComponent(jTextField1)))))
+                                    .addComponent(moyenneMensuelle)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(146, 146, 146)
                         .addComponent(jLabel_analyse)))
@@ -108,16 +122,16 @@ public class vueAnalyseDonnee extends javax.swing.JFrame {
                 .addComponent(jLabel_analyse, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(moyenneMensuelle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel_moyenne, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel_correlation)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3_Prediction)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3_Prediction))
                 .addGap(28, 28, 28)
                 .addComponent(jButtonFermer)
                 .addContainerGap(30, Short.MAX_VALUE))
@@ -127,21 +141,23 @@ public class vueAnalyseDonnee extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonFermerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFermerActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
        
     }//GEN-LAST:event_jButtonFermerActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void moyenneMensuelleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moyenneMensuelleActionPerformed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_moyenneMensuelleActionPerformed
 
     private void jButtonFermerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonFermerMouseClicked
             // TODO add your handling code here:
          
-            
+            //SELECT avg(Montant) Moyenne from transactions where Type = "depense" and MONTH(NOW()) = MONTH(DateTransact)
     }//GEN-LAST:event_jButtonFermerMouseClicked
 
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -183,8 +199,8 @@ public class vueAnalyseDonnee extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_analyse;
     private javax.swing.JLabel jLabel_correlation;
     private javax.swing.JLabel jLabel_moyenne;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField moyenneMensuelle;
     // End of variables declaration//GEN-END:variables
 }
