@@ -33,6 +33,18 @@ public class TransactionModele {
         listeners = new EventListenerList();
     }
 
+    public static String getAvg() throws SQLException {
+        PreparedStatement statement = Database.getConnection().prepareStatement("SELECT avg(Montant) Moyenne from transactions where Type = \"depense\" and MONTH(NOW()) = MONTH(DateTransact)");
+        ResultSet rs = statement.executeQuery();
+        rs.first();
+        if (rs.getRow()==0) {
+            return "0.0";
+        } else {
+            return rs.getString("Moyenne");
+
+        }
+    }
+
     public void addTransactionListener(TransactionListener listener) {
         listeners.add(TransactionListener.class, listener);
     }
@@ -91,18 +103,19 @@ public class TransactionModele {
             rs.beforeFirst();
             int i = 0;
             listMembre[i] = "Tous les membres";
-            while (rs.next()) 
+            while (rs.next()) {
                 listMembre[++i] = rs.getString("Nom") + " - " + rs.getString("Prenom");
-            
+            }
+
         } catch (SQLException ex) {
             Logger.getLogger(TransactionModele.class.getName()).log(Level.SEVERE, null, ex);
         }
         return listMembre;
     }
-    
-    public void updateModelFromDates(){
+
+    public void updateModelFromDates() {
         listModel = new DefaultListModel<String>();
-      
+
         try {
             PreparedStatement statement = Database.getConnection().prepareStatement("SELECT * FROM transactions WHERE ID_Personne=" + membreId + " AND DateTransact BETWEEN '" + dateDebut + "' AND '" + dateFin + "'");
             ResultSet rs = statement.executeQuery();
@@ -118,19 +131,21 @@ public class TransactionModele {
 
     public void setMembreId(String id) {
         this.membreId = id;
-        
-        if(id.equals("0"))
+
+        if (id.equals("0")) {
             updateModel();
-        else 
+        } else {
             updateModelFromMembre();
+        }
     }
-    
-    public void setDates(String dateDebut, String dateFin){
+
+    public void setDates(String dateDebut, String dateFin) {
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
-        
-        if(membreId.equals("0"))
+
+        if (membreId.equals("0")) {
             membreId = "1";
+        }
         updateModelFromDates();
     }
 }

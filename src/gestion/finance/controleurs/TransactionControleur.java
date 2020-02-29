@@ -7,6 +7,7 @@ package gestion.finance.controleurs;
 
 import gestion.finance.vue.Accueil;
 import gestion.finance.modeles.TransactionModele;
+import java.sql.SQLException;
 
 
 
@@ -41,6 +42,9 @@ public class TransactionControleur {
     
     public void closeAccueil(){
         this.accueilView.setVisible(false);
+    }
+    public String getAVG() throws SQLException{
+        return TransactionModele.getAvg();
     }
    
 }
