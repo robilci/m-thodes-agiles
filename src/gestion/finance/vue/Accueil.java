@@ -245,6 +245,20 @@ public class Accueil extends View implements TransactionListener {
                 vueAnalyse.setVisible(true);
             }
         });
+         bPrediction.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                vueDeepLearning vueDL = new vueDeepLearning();
+                vueDL.setVisible(true);
+            }
+        });
+          bImport.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                vueImportDonnee vueImport = new vueImportDonnee();
+                vueImport.setVisible(true);
+            }
+        });
 
     }
 

@@ -30,11 +30,7 @@ public class GestionFinanceProjet {
      */
     public static void main(String[] args) {
         new Database("localhost", "3307", "gestion_finances", "root", "");
-        try {
-            System.out.println(TransactionModele.getAvg()+" je fais");
-        } catch (SQLException ex) {
-            Logger.getLogger(GestionFinanceProjet.class.getName()).log(Level.SEVERE, null, ex);
-        }
+     
         CompteControleur compteControleur = new CompteControleur();
         compteControleur.showConnexion();
 

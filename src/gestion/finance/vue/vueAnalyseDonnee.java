@@ -14,7 +14,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author NCHOISAAC
+ * @author NCHOISAAC and Ginkishi
  */
 public class vueAnalyseDonnee extends javax.swing.JFrame {
 
