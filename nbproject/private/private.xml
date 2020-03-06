@@ -6,12 +6,16 @@
             <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/modeles/CompteModele.java</file>
             <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/modeles/TransactionModele.java</file>
             <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/vue/Connexion.java</file>
+            <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/vue/Inscription.java</file>
+            <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/projet/GestionFinanceProjet.java</file>
             <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/modeles/PersonneModele.java</file>
             <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/controleurs/CompteControleur.java</file>
+            <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/vue/vueImportDonnee.java</file>
             <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/utils/Database.java</file>
-            <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/projet/GestionFinanceProjet.java</file>
+            <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/vue/vueDeepLearning.java</file>
             <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/vue/Accueil.java</file>
             <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/utils/Session.java</file>
+            <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/vue/vueAnalyseDonnee.java</file>
         </group>
     </open-files>
 </project-private>
