@@ -16,7 +16,7 @@ public class GestionFinanceProjet {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new Database("localhost", "3307", "gestion_finances", "root", "");
+        new Database("localhost", "3306", "gestion_finances", "root", "");
         CompteModele cm = new CompteModele();
         cm.createAccount();
     }
