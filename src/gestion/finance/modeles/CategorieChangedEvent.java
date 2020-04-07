@@ -1,0 +1,26 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package gestion.finance.modeles;
+
+import java.util.EventObject;
+
+/**
+ *
+ * @author victo
+ */
+public class CategorieChangedEvent extends EventObject{
+      private CategorieModele nouvelleCategorie;
+ 
+	public CategorieChangedEvent(Object source, CategorieModele nouvelleCategorie){
+		super(source);
+ 
+		this.nouvelleCategorie = nouvelleCategorie;
+	}
+ 
+	public CategorieModele getNouvelleCategoriet(){
+		return nouvelleCategorie;
+	}
+}
