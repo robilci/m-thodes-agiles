@@ -7,10 +7,18 @@ package gestion.finance.vue;
 
 import gestion.finance.controleurs.ImportationControleur;
 import gestion.finance.modeles.ImportationListener;
+import gestion.finance.modeles.ImportationModel;
 import gestion.finance.modeles.MontantChangedEvent;
+import gestion.finance.modeles.TransactionModele;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import javax.swing.JOptionPane;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 
 /**
  *
@@ -20,12 +28,15 @@ public class vueImportDonnee extends View implements ImportationListener {
     
      
 private ImportationControleur controleur =null;
+ private ImportationModel modele;
+
 
     /**
      * Creates new form vueImportDonnee
      */
-    public vueImportDonnee(ImportationControleur controleur) {
+    public vueImportDonnee(ImportationModel modele,ImportationControleur controleur) {
         super();
+        this.modele=modele;
         this.controleur=controleur;
         initComponents();
     }
@@ -58,8 +69,7 @@ private ImportationControleur controleur =null;
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Fichier");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "nom prenom", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new DefaultComboBoxModel(modele.getMembres()));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -144,12 +154,6 @@ private ImportationControleur controleur =null;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-        
-       // la liste deroulante
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
         // le nom du text filed
@@ -157,66 +161,63 @@ private ImportationControleur controleur =null;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
         // le bouton importer
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.dispose(); //le bouton annuler
+        //le bouton annuler
+        
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        //pour lancer le click de parcourir
+    // TODO add your handling code here:
+    //pour lancer le click de parcourir
+    JFileChooser jFileChooser =  new JFileChooser(); 
+     jFileChooser.setDialogTitle("choisir fichier");
+
+ FileNameExtensionFilter filter = new FileNameExtensionFilter(
+                                "Fichiers csv.", "csv","Fichiers txt.","txt");
+                        jFileChooser.addChoosableFileFilter(filter);
+                        jFileChooser.setAcceptAllFileFilterUsed(false);
+
+
+     int result= jFileChooser.showSaveDialog(null);
+     if( result == JFileChooser.APPROVE_OPTION )
+     {
+     
+     File file =jFileChooser.getSelectedFile();
+     System.out.println(jFileChooser.getSelectedFile().toString());
+     String name = jFileChooser.getSelectedFile().getName();
+     jTextField1.setText(name);
+     
+     
+     String path = jFileChooser.getSelectedFile().getAbsolutePath(); 
+         System.out.println(name);
+         System.out.println(path);
+     
+        
+     }
+   
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+
+        // la liste deroulante
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     
-    /*
-    private void initActionListener() {
-        annulerButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-            }
-        });
-
-        ajouterButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String nom = nomTextField.getText().toString();
-                String prenom = prenomTextField.getText().toString();
-
-                if (nom.equals("") || prenom.equals("")) {
-                    JOptionPane.showMessageDialog(jPanel5, "Le nom ou prenom du membre ne peut pas être vide", "Création du membre impossible", JOptionPane.ERROR_MESSAGE);
-                } else {
-                    controleur.ajouterMembre(nom, prenom);
-                }
-            }
-        });
-    }
     
-    
-    
-    private void initActionListener(){
-        annulerButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-            }
-        });
-        
-        connexionButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                controleur.auth(pseudoTextField.getText().toString(), passwordTextField.getText().toString());
-            }
-        });
-    }
 
-*/
+    
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

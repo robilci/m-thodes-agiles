@@ -3,32 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/modeles/ImportationModel.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/vue/Connexion.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/controleurs/TransactionControleur.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/vue/vueImportDonnee.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/modeles/CorrelationModele.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/controleurs/CompteControleur.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/utils/Session.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/modeles/CategorieModele.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/vue/Accueil.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/utils/Database.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/controleurs/PersonneControleur.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/modeles/TransactionModele.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/modeles/CategorieChangedEvent.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/modeles/CompteModele.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/controleurs/ImportationControleur.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/projet/GestionFinanceProjet.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/modeles/TransactionListener.java</file>
             <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/vue/Inscription.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/exceptions/AucunProduitException.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/modeles/CompteListener.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/vue/vueAnalyseDonnee.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/modeles/CompteChangedEvent.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/modeles/PersonneModele.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/modeles/CategorieListener.java</file>
-            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/exceptions/AucunePersonneException.java</file>
+            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/controleurs/ImportationControleur.java</file>
+            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/controleurs/TransactionControleur.java</file>
             <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/vue/AjoutMembre.java</file>
+            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/vue/Accueil.java</file>
+            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/vue/Connexion.java</file>
+            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/vue/vueImportDonnee.java</file>
+            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/modeles/ImportationModel.java</file>
+            <file>file:/C:/m-thodes-agiles-victor/src/gestion/finance/vue/View.java</file>
         </group>
     </open-files>
 </project-private>

@@ -14,6 +14,15 @@ import gestion.finance.utils.Database;
 import gestion.finance.utils.Session;
 import java.sql.ResultSet;
 import javax.swing.event.EventListenerList;
+
+
+import gestion.finance.utils.Database;
+import gestion.finance.utils.Session;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.DefaultListModel;
 /**
  *
  * @author khaml
@@ -88,6 +97,28 @@ public class ImportationModel {
 			listener.montantChanged(new MontantChangedEvent(this, getMontant()));
 		}
 	}
+        
+        
+         public String[] getMembres() {
+        String[] listMembre = null;
+        try {
+            PreparedStatement statement = Database.getConnection().prepareStatement("SELECT * FROM personne WHERE ID_Compte = " + Session.getIdCompte());
+            System.out.println("SELECT * FROM personne WHERE ID_Compte = " + Session.getIdCompte());
+            ResultSet rs = statement.executeQuery();
+            rs.last();
+            listMembre = new String[rs.getRow() + 1];
+            rs.beforeFirst();
+            int i = 0;
+            listMembre[i] = "Tous les membres";
+            while (rs.next()) {
+                listMembre[++i] = rs.getString("Nom") + " - " + rs.getString("Prenom");
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(TransactionModele.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listMembre;
+    }
       
       
       

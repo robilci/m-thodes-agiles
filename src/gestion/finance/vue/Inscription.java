@@ -197,6 +197,7 @@ public class Inscription extends View implements CompteListener{
         
         inscriptionButton.addActionListener(new ActionListener() {
             @Override
+            
             public void actionPerformed(ActionEvent e) {
               
                 String pseudo, password1, password2;

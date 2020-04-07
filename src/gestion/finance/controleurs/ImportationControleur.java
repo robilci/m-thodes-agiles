@@ -12,6 +12,8 @@ import gestion.finance.vue.AjoutMembre;
 import gestion.finance.vue.vueImportDonnee;
 
 
+
+
 /**
  *
  * @author khaml
@@ -26,7 +28,7 @@ public class ImportationControleur {
     
      public ImportationControleur(){
         this.model = new ImportationModel();
-        this.vueImportDonnee = new vueImportDonnee(this);
+        this.vueImportDonnee = new vueImportDonnee(model,this);
         this.model.addMontantListener(vueImportDonnee);
         this.showAjoutDonnee();
     }
