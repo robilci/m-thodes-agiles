@@ -18,7 +18,16 @@ import javax.swing.event.EventListenerList;
 
 import gestion.finance.utils.Database;
 import gestion.finance.utils.Session;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.sql.Date;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -119,8 +128,67 @@ public class ImportationModel {
         }
         return listMembre;
     }
+         public void remplirDB(String csvFilePath) throws SQLException, FileNotFoundException, IOException, ParseException
+         {
+             int batchSize = 100;
+ 
+         
+         try{
+         
+           PreparedStatement  statement = Database.getConnection().prepareStatement("INSERT INTO transactions (Type, DateTransact, Montant,Libelle,ID_Personne,ID_Categorie) VALUES (?, ?, ?,?,?,?)");
+           
+                 try (BufferedReader lineReader = new BufferedReader(new FileReader(csvFilePath))) {
+                     String lineText = null;
+                     int count = 0;
+                     
+                     while ((lineText = lineReader.readLine()) != null) {
+                         String[] data = lineText.split(",");
+                         String Type = data[0];
+                         String DateTransact = data[1];
+                         String Montant = data[2];
+                         String Libelle = data[3];
+                         String ID_Personne = data[4];
+                         String ID_Categorie = data[5];
+                         
+                         statement.setString(1, Type);
+                         
+                         
+                        Timestamp sqlTimestamp = Timestamp.valueOf(DateTransact);
+                        statement.setTimestamp(2, sqlTimestamp);
+                         
+                         Float fMontant = Float.parseFloat(Montant);
+                         statement.setFloat(3, fMontant);
+                         statement.setString(4, Libelle);
+                         
+                         int per=Integer.parseInt(ID_Personne);
+                         statement.setInt(5, per);
+                         
+                         
+                         int cat=Integer.parseInt(ID_Categorie);
+                         statement.setInt(6, per);
+                         
+                         statement.addBatch();
+                         
+                         if (count % batchSize == 0)
+                         {
+                             statement.executeBatch();
+                         }
+                         
+                         
+                     }       }
+ 
+            // execute the remaining queries
+            statement.executeBatch();
+ 
+         
+             
+         }    
+             
+             catch (IOException ex) {
+            Logger.getLogger(ImportationModel.class.getName()).log(Level.SEVERE, null, ex);
+        }
       
       
       
-    
+         }
 }

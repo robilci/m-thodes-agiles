@@ -13,6 +13,12 @@ import gestion.finance.modeles.TransactionModele;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFileChooser;
@@ -160,9 +166,14 @@ private ImportationControleur controleur =null;
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+            String nom = jTextField1.getText();
+    try {
+        modele.remplirDB(nom);
+    } catch (SQLException | IOException | ParseException ex) {
+        Logger.getLogger(vueImportDonnee.class.getName()).log(Level.SEVERE, null, ex);
         
-        // le bouton importer
+    }
+    this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
