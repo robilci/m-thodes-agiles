@@ -2,19 +2,9 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
         <group>
-            <file>file:/C:/Users/khaml/Desktop/Nouveau%20dossier/m-thodes-agiles/src/gestion/finance/modeles/PersonneModele.java</file>
-            <file>file:/C:/Users/khaml/Desktop/Nouveau%20dossier/m-thodes-agiles/src/gestion/finance/vue/vueImportDonnee.java</file>
-            <file>file:/C:/Users/khaml/Desktop/Nouveau%20dossier/m-thodes-agiles/src/gestion/finance/modeles/TransactionModele.java</file>
-            <file>file:/C:/Users/khaml/Desktop/Nouveau%20dossier/m-thodes-agiles/src/gestion/finance/vue/AjoutMembre.java</file>
-            <file>file:/C:/Users/khaml/Desktop/Nouveau%20dossier/m-thodes-agiles/src/gestion/finance/modeles/CorrelationModele.java</file>
-            <file>file:/C:/Users/khaml/Desktop/Nouveau%20dossier/m-thodes-agiles/src/gestion/finance/modeles/CompteModele.java</file>
-            <file>file:/C:/Users/khaml/Desktop/Nouveau%20dossier/m-thodes-agiles/src/gestion/finance/modeles/ImportationModel.java</file>
-            <file>file:/C:/Users/khaml/Desktop/Nouveau%20dossier/m-thodes-agiles/src/gestion/finance/modeles/CategorieModele.java</file>
+            <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/controleurs/CompteControleur.java</file>
+            <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/vue/vueImportDonnee.java</file>
         </group>
-=======
-        <group/>
->>>>>>> 2aea3c02231a4fb250d3d43706c3f1e21ed7ffc3
     </open-files>
 </project-private>
