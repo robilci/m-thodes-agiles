@@ -113,8 +113,13 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="faible / moyenne / forte"/>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="&quot;faible / moyenne / forte&quot;" type="code"/>
+        </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jTextField2.setEnabled(false);&#xa;CorrelationControleur c = new CorrelationControleur(0);&#xa;if(c.getCorrelation()&lt;0){&#xa;    jTextField2.setText(&quot;Faible&quot;);&#xa;}else if(c.getCorrelation()== 0){&#xa;    jTextField2.setText(&quot;Moyenne&quot;);&#xa;}else{&#xa;    jTextField2.setText(&quot;Forte&quot;);&#xa;}"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField3">
       <Properties>

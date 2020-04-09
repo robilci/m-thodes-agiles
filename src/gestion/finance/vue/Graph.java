@@ -22,7 +22,7 @@ public class Graph extends View implements PersonneListener {
           this.setLocationRelativeTo(null);
           this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
           this.setSize(500,600);
-          JLabel label = new JLabel(img,JLabel.CENTER);
+          JLabel label = new JLabel(img, JLabel.CENTER);
           this.add(label);
     }
 
@@ -66,13 +66,7 @@ public class Graph extends View implements PersonneListener {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-      
      
-       
-     
-    
-        
-        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Graph().setVisible(true);
