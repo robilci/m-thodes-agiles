@@ -14,6 +14,9 @@ import gestion.finance.utils.Database;
 import gestion.finance.vue.Accueil;
 import gestion.finance.vue.AjoutMembre;
 import java.awt.Dimension;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 /**
@@ -26,7 +29,9 @@ public class GestionFinanceProjet {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
         new Database("localhost", "3306", "gestion_finances", "root", "");
+
 
         CompteControleur compteControleur = new CompteControleur();
         compteControleur.showConnexion();
