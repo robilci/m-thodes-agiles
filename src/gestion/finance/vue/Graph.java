@@ -40,7 +40,7 @@ public class Graph extends View implements PersonneListener {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label.setIcon(new javax.swing.ImageIcon("C:\\Users\\Abed\\Documents\\NetBeansProjects\\m-thodes-agiles\\g.jpg")); // NOI18N
+        label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/finance/vue/g.jpg"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
