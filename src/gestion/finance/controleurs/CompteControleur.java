@@ -23,6 +23,7 @@ public class CompteControleur {
 
     private Inscription inscriptionView;
     private Connexion connexionView;
+
     private CompteModele compteModele;
 
     public CompteControleur() {
