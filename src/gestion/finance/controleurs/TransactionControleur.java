@@ -43,8 +43,8 @@ public class TransactionControleur {
     public void closeAccueil(){
         this.accueilView.setVisible(false);
     }
+
     public String getAVG() throws SQLException{
         return TransactionModele.getAvg();
-    }
-   
+    }   
 }

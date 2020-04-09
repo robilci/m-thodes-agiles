@@ -103,6 +103,7 @@ public class TransactionModele {
             rs.beforeFirst();
             int i = 0;
             listMembre[i] = "Tous les membres";
+
             while (rs.next()) {
                 listMembre[++i] = rs.getString("Nom") + " - " + rs.getString("Prenom");
             }
@@ -113,7 +114,7 @@ public class TransactionModele {
         return listMembre;
     }
 
-    public void updateModelFromDates() {
+    public void updateModelFromDates(){
         listModel = new DefaultListModel<String>();
 
         try {
@@ -132,6 +133,7 @@ public class TransactionModele {
     public void setMembreId(String id) {
         this.membreId = id;
 
+
         if (id.equals("0")) {
             updateModel();
         } else {
@@ -146,6 +148,7 @@ public class TransactionModele {
         if (membreId.equals("0")) {
             membreId = "1";
         }
+
         updateModelFromDates();
     }
 }

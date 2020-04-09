@@ -3,8 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/controleurs/CompteControleur.java</file>
             <file>file:/D:/MIAGE/M1/Méthode%20agile/m-thodes-agiles/src/gestion/finance/vue/vueImportDonnee.java</file>
+=======
+            <file>file:/C:/Users/Abed/Documents/NetBeansProjects/m-thodes-agiles/src/gestion/finance/controleurs/GraphControleur.java</file>
+            <file>file:/C:/Users/Abed/Documents/NetBeansProjects/m-thodes-agiles/src/gestion/finance/vue/AjoutMembre.java</file>
+            <file>file:/C:/Users/Abed/Documents/NetBeansProjects/m-thodes-agiles/src/gestion/finance/vue/Graph.java</file>
+            <file>file:/C:/Users/Abed/Documents/NetBeansProjects/m-thodes-agiles/src/gestion/finance/modeles/GraphModele.java</file>
+            <file>file:/C:/Users/Abed/Documents/NetBeansProjects/m-thodes-agiles/src/gestion/finance/vue/View.java</file>
+>>>>>>> 2cd3ff3700f4b8504fa78ba4b0c01f73ba984d6d
         </group>
     </open-files>
 </project-private>
