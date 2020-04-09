@@ -6,6 +6,7 @@
 package gestion.finance.vue;
 
 import gestion.finance.controleurs.TransactionControleur;
+import gestion.finance.controleurs.CorrelationControleur;
 import gestion.finance.modeles.TransactionModele;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -68,6 +69,15 @@ public class vueAnalyseDonnee extends javax.swing.JFrame {
         });
 
         jTextField2.setText("faible / moyenne / forte");
+        jTextField2.setEnabled(false);
+        CorrelationControleur c = new CorrelationControleur(0);
+        if(c.getCorrelation()<0){
+            jTextField2.setText("Faible");
+        }else if(c.getCorrelation()== 0){
+            jTextField2.setText("Moyenne");
+        }else{
+            jTextField2.setText("Forte");
+        }
 
         jTextField3.setText("Y");
 

@@ -6,6 +6,7 @@
 package gestion.finance.projet;
 
 import gestion.finance.controleurs.CompteControleur;
+import gestion.finance.controleurs.CorrelationControleur;
 import gestion.finance.controleurs.PersonneControleur;
 import gestion.finance.controleurs.TransactionControleur;
 import gestion.finance.modeles.CompteModele;
@@ -29,8 +30,13 @@ public class GestionFinanceProjet {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new Database("localhost", "3306", "gestion_finances", "root", "");
+        
+        
+        
+        new Database("localhost", "3307", "gestion_finances", "root", "");
         CompteControleur compteControleur = new CompteControleur();
+        CorrelationControleur c = new CorrelationControleur(0);       
+
         compteControleur.showConnexion();
     }
 
